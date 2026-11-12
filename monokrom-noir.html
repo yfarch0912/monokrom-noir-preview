@@ -51,8 +51,8 @@ p,li{font-family:'Inter',system-ui,sans-serif}
 @keyframes petalDrift{0%{transform:translate3d(-60px,0,0) rotate(0deg);opacity:0}7%{opacity:.8}50%{transform:translate3d(235px,var(--y50,26px),0) rotate(175deg)}93%{opacity:.75}100%{transform:translate3d(500px,var(--ye,54px),0) rotate(348deg);opacity:0}}
 .cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.12) 30%,rgba(0,0,0,.08) 52%,rgba(0,0,0,.78) 100%);z-index:4;pointer-events:none}
 .cover-ui{position:absolute;inset:0;z-index:8;display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 26px 30px}
-.cover-kicker{margin-top:21%;font-family:'Playfair Display',serif;font-weight:600;font-size:11.5px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.9);animation:trackIn 1.4s 3.3s cubic-bezier(.22,.8,.3,1) both}
-.cover-names{font-family:'Playfair Display',serif;font-weight:800;margin-top:12px;font-size:57px;line-height:1.08;color:#fff;text-shadow:0 3px 26px rgba(0,0,0,.85),0 1px 4px rgba(0,0,0,.9);animation:fadeUp 1.1s 3.6s ease both}
+.cover-kicker{margin-top:21%;font-family:'Noir Kicker',monospace;font-weight:700;font-size:11.5px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.9);animation:trackIn 1.4s 3.3s cubic-bezier(.22,.8,.3,1) both}
+.cover-names{font-family:'Noir Display',serif;font-weight:800;margin-top:12px;font-size:57px;line-height:1.08;color:#fff;text-shadow:0 3px 26px rgba(0,0,0,.85),0 1px 4px rgba(0,0,0,.9);animation:fadeUp 1.1s 3.6s ease both}
 .cover-names .nm-line{display:block}
 .cover-names .amp{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:34px;line-height:1;margin:2px 0;color:#e8e8e8}
 .cover-date{margin-top:14px;font-family:'Inter',system-ui,sans-serif;font-size:11.5px;letter-spacing:.3em;color:#fff;background:rgba(0,0,0,.55);padding:8px 16px 8px 19px;border:1px solid rgba(255,255,255,.85);box-shadow:inset 0 0 0 3px rgba(0,0,0,.55),inset 0 0 0 4px rgba(255,255,255,.4);animation:fadeUp 1s 3.9s ease both}
@@ -277,7 +277,7 @@ body.opened #btnMusic{display:flex}
 #galeri .gal-cap::before{content:"FRAME " counter(frame,decimal-leading-zero) "A · ";font-family:'Inter',system-ui,sans-serif;font-style:normal;font-size:11px;letter-spacing:.22em;color:#cfcfcf}
 #galeri .gal-rail figure:nth-child(3) .frame::after{content:"";position:absolute;inset:7% 5%;border:3px solid #c8102e;border-radius:50%;transform:rotate(-7deg);opacity:.92;pointer-events:none;z-index:3}
 #galeri .gal-rail figure:nth-child(3) .gal-cap::after{content:" — PILIHAN ✎";color:#ff5b74;font-family:'Inter',system-ui,sans-serif;font-style:normal;font-size:11px;letter-spacing:.18em}
-.sheet-edge{width:100%;height:22px;object-fit:cover;object-position:50% 4%;display:block;margin-bottom:10px;border:1px solid rgba(255,255,255,.35)}
+.sheet-edge{width:100%;height:22px;display:block;margin-bottom:10px;border:1px solid rgba(255,255,255,.35);background-color:#050505;background-image:url("assets/undangya/monokrom-noir/sprocket-h.webp");background-repeat:repeat-x;background-position:center;background-size:auto 100%}
 /* Love Story STORYBOARD */
 .tl{counter-reset:scene}
 .tl:before{display:none}
@@ -326,7 +326,7 @@ p,li,.cover-date,.cover-guest,#btnOpen,.sec-kicker,.person p,.ig-btn,.cd-box spa
       <img class="lyr lamp-glow" style="left:-4%;bottom:9%;width:19%;z-index:3" src="assets/undangya/monokrom-noir/lamp.webp" alt="">
       <img class="lyr lamp-glow" style="right:-4%;bottom:9%;width:19%;z-index:3;animation-delay:-2.6s" src="assets/undangya/monokrom-noir/lamp.webp" alt="">
       <!-- tegak: pivot pangkal bawah -->
-      <img class="lyr" data-anchor="bottom" style="--sa:2.5deg;--sd:3s;left:-4%;bottom:-1%;width:30%;z-index:5" src="assets/undangya/monokrom-noir/flower-1.webp" alt="">
+      <img class="lyr" data-anchor="bottom" style="--sa:2.5deg;--sd:3s;left:-6.5%;bottom:-1%;width:28%;z-index:5" src="assets/undangya/monokrom-noir/flower-1.webp" alt="">
       <img class="lyr" data-anchor="bottom" style="--sa:2.2deg;--sd:4.4s;--sdl:-4s;left:19%;bottom:-1.5%;width:22%;z-index:5" src="assets/undangya/monokrom-noir/flower-3.webp" alt="">
       <img class="lyr" data-anchor="bottom" style="--sa:2.8deg;--sd:3.6s;--sdl:-1.5s;right:19%;bottom:-1.5%;width:21%;z-index:5" src="assets/undangya/monokrom-noir/flower-6.webp" alt="">
       <img class="lyr" data-anchor="bottom" style="--sa:2.4deg;--sd:5s;--sdl:-6s;right:-4%;bottom:-1%;width:29%;z-index:5" src="assets/undangya/monokrom-noir/flower-2.webp" alt="">
@@ -403,7 +403,7 @@ p,li,.cover-date,.cover-guest,#btnOpen,.sec-kicker,.person p,.ig-btn,.cd-box spa
 
     <!-- ================= MEMPELAI ================= -->
     <section id="mempelai" class="zone-light">
-      <img class="bgimg" src="assets/undangya/monokrom-noir/galeri-2.webp" alt="" loading="lazy" decoding="async">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/bg-mempelai.webp" alt="" loading="lazy" decoding="async">
       <img class="decor" data-anchor="bottom" style="--sa:1.8deg;--sd:4.2s;left:-4%;top:34%;width:20%;opacity:.55" src="assets/undangya/monokrom-noir/leaf-1.webp" alt="">
       <img class="decor" data-anchor="bottom" style="--sa:2deg;--sd:5.3s;--sdl:-5s;right:-4%;top:58%;width:20%;opacity:.55" src="assets/undangya/monokrom-noir/leaf-1.webp" alt="">
       <div class="inner">
@@ -454,7 +454,7 @@ p,li,.cover-date,.cover-guest,#btnOpen,.sec-kicker,.person p,.ig-btn,.cd-box spa
             <div class="tl-year">2019</div><div class="tl-title">Pertama Bertemu</div>
             <p>Berawal dari pertemuan sederhana di sebuah kafe tua dekat kampus — seperti adegan pembuka sebuah film, obrolan hari itu menjadi bingkai pertama kisah kami.</p></div></div>
           <div class="tl-item rv rv-right"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card">
-            <img class="tl-thumb" src="assets/undangya/monokrom-noir/galeri-6.webp" alt="Momen pertukaran cincin" loading="lazy" decoding="async">
+            <img class="tl-thumb" style="object-position:50% 30%" src="assets/undangya/monokrom-noir/galeri-6.webp" alt="Momen pertukaran cincin" loading="lazy" decoding="async">
             <div class="tl-year">2023</div><div class="tl-title">Lamaran &amp; Restu</div>
             <p>Di hadapan keluarga tercinta, Fahrezzi menyampaikan niat sucinya. Dengan restu kedua orang tua, Meyzsa menerimanya dengan hati berbinar.</p></div></div>
           <div class="tl-item rv rv-left"><span class="tl-dot" aria-hidden="true"></span><div class="tl-card">
@@ -472,7 +472,7 @@ p,li,.cover-date,.cover-guest,#btnOpen,.sec-kicker,.person p,.ig-btn,.cd-box spa
 
     <!-- ================= COUNTDOWN + ACARA + DRESSCODE + DENAH ================= -->
     <section id="acara" class="zone-light">
-      <img class="bgimg" src="assets/undangya/monokrom-noir/teaser-poster.webp" alt="" loading="lazy" decoding="async">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/bg-acara.webp" alt="" loading="lazy" decoding="async">
       <div class="inner">
         <div class="sec-head">
           <div class="sec-icon rv rv-zoom"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="24" cy="26" r="15"/><path d="M24 18v8l6 4M18 4h12M24 4v7"/></svg></div>
@@ -554,7 +554,7 @@ p,li,.cover-date,.cover-guest,#btnOpen,.sec-kicker,.person p,.ig-btn,.cd-box spa
         <h2 class="sec-title rv rv-up" style="--rd:.08s">Rol Film Kami</h2>
         <p class="sec-sub rv rv-up" style="--rd:.16s">Delapan bingkai hitam-putih — geser ke samping, ketuk untuk memperbesar</p>
       </div>
-      <img class="sheet-edge" src="assets/undangya/monokrom-noir/sprocket.webp" alt="" loading="lazy" decoding="async">
+      <div class="sheet-edge" aria-hidden="true"></div>
       <div class="gal-rail rv rv-clip" id="galRail">
         <figure><div class="frame"><div class="frame-in"><img src="assets/undangya/monokrom-noir/galeri-1.webp" alt="Pasangan di jendela melengkung dengan cahaya dramatis" loading="lazy" decoding="async"></div></div><figcaption class="gal-cap">Jendela Cahaya</figcaption></figure>
         <figure><div class="frame"><div class="frame-in"><img src="assets/undangya/monokrom-noir/galeri-2.webp" alt="Pasangan menuruni tangga marmer" loading="lazy" decoding="async"></div></div><figcaption class="gal-cap">Tangga Marmer</figcaption></figure>
