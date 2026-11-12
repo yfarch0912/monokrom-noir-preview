@@ -11,6 +11,10 @@
 @font-face{font-family:'Playfair Display';src:url('assets/undangya/monokrom-noir/font-serif.woff2') format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
 @font-face{font-family:'Cormorant Garamond';src:url('assets/undangya/monokrom-noir/font-body.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}
 @font-face{font-family:'Cormorant Garamond';src:url('assets/undangya/monokrom-noir/font-serif-italic.woff2') format('woff2');font-weight:400 700;font-style:italic;font-display:swap}
+/* Font hero unik Monokrom Noir — Limelight (display marquee art-deco) + Courier Prime (kicker mesin ketik), self-hosted woff2 subset latin, SIL OFL 1.1 */
+@font-face{font-family:'Noir Display';src:url('assets/undangya/monokrom-noir/font-hero-display.woff2') format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Noir Kicker';src:url('assets/undangya/monokrom-noir/font-hero-kicker.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Noir Kicker';src:url('assets/undangya/monokrom-noir/font-kicker-regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
 :root{
   --black:#0b0b0b; --ink:#161616; --coal:#232323; --gray:#5c5c5c; --mist:#8a8a8a;
   --paper:#f2f0eb; --paper2:#e7e4dd; --white:#fff; --line:rgba(20,20,20,.28); --line-w:rgba(255,255,255,.34);
@@ -20,7 +24,7 @@ html{scroll-behavior:smooth}
 body{background:#060606;font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink);-webkit-font-smoothing:antialiased}
 .serif{font-family:'Playfair Display',Georgia,serif}
 .phone{max-width:430px;margin:0 auto;position:relative;min-height:100dvh;overflow:clip;background:var(--paper);box-shadow:0 0 90px rgba(0,0,0,.95)}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 button{font-family:inherit;cursor:pointer}
 p,li{font-family:'Inter',system-ui,sans-serif}
 
@@ -35,9 +39,9 @@ p,li{font-family:'Inter',system-ui,sans-serif}
 @keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
 @keyframes trackIn{from{opacity:0;letter-spacing:.72em;transform:translateY(10px)}to{opacity:1;letter-spacing:.42em;transform:translateY(0)}}
 /* Klasifikasi anchor — semua murni CSS keyframes transform/opacity, easing sinus */
-[data-anchor="bottom"]{transform-origin:50% 100%;animation:swayB var(--sd,8.6s) cubic-bezier(.37,0,.63,1) infinite alternate;animation-delay:var(--sdl,0s)}
+[data-anchor="bottom"]{transform-origin:50% 100%;animation:swayB var(--sd,4.2s) cubic-bezier(.37,0,.63,1) infinite alternate;animation-delay:var(--sdl,0s)}
 @keyframes swayB{from{transform:rotate(calc(var(--sa,2.2deg) * -1))}to{transform:rotate(var(--sa,2.2deg))}}
-[data-anchor="top"]{transform-origin:50% 0;animation:swayT var(--sd,9.2s) cubic-bezier(.37,0,.63,1) infinite alternate;animation-delay:var(--sdl,0s)}
+[data-anchor="top"]{transform-origin:50% 0;animation:swayT var(--sd,4.6s) cubic-bezier(.37,0,.63,1) infinite alternate;animation-delay:var(--sdl,0s)}
 @keyframes swayT{from{transform:rotate(var(--sa,2deg))}to{transform:rotate(calc(var(--sa,2deg) * -1))}}
 .lamp-glow{animation:glowPulse 5.2s cubic-bezier(.37,0,.63,1) infinite alternate}
 @keyframes glowPulse{from{opacity:.82;filter:brightness(.94)}to{opacity:1;filter:brightness(1.1)}}
@@ -239,7 +243,7 @@ body.opened #btnMusic{display:flex}
 .lyr-coverbg{animation:develop 5.2s cubic-bezier(.37,0,.63,1) both,bgDrift 36s cubic-bezier(.37,0,.63,1) 5.2s infinite alternate}
 @keyframes develop{0%{opacity:.15;filter:brightness(.32) sepia(.95) hue-rotate(-38deg) saturate(2.4) contrast(.75)}34%{opacity:.62;filter:brightness(.55) sepia(.75) hue-rotate(-32deg) saturate(1.9) contrast(.88)}68%{opacity:.92;filter:brightness(.86) saturate(.35) contrast(1.04)}100%{opacity:1;filter:brightness(1) saturate(0) contrast(1.14)}}
 /* Bingkai tepi film sprocket mengelilingi sampul */
-.sprocket{position:absolute;top:0;bottom:0;width:24px;background-color:#050505;background-image:radial-gradient(circle at 50% 14px,#e9e9e9 4.6px,rgba(233,233,233,0) 5.4px);background-size:24px 36px;z-index:6;pointer-events:none}
+.sprocket{position:absolute;top:0;bottom:0;width:24px;background-color:#050505;background-image:url("assets/undangya/monokrom-noir/sprocket.webp");background-size:24px auto;background-repeat:repeat-y;background-position:center top;z-index:6;pointer-events:none}
 .sprocket-l{left:0}.sprocket-r{right:0}
 /* Cahaya venetian menyapu sampul */
 .venetian{position:absolute;inset:-12%;background:repeating-linear-gradient(103deg,transparent 0 44px,rgba(255,255,255,.14) 44px 60px,transparent 60px 108px);z-index:3;pointer-events:none;animation:venSweep 9.5s cubic-bezier(.37,0,.63,1) infinite alternate}
@@ -293,6 +297,13 @@ body.opened #btnMusic{display:flex}
 .tag-big{background:linear-gradient(100deg,#fff 30%,#9a9a9a 50%,#fff 70%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:silverShimmer 6s cubic-bezier(.37,0,.63,1) infinite alternate}
 @keyframes silverShimmer{from{background-position:0% 0}to{background-position:100% 0}}
 
+/* ===== FONT HERO UNIK (Program Detail 2026-11-12): Limelight untuk nama/judul, Courier Prime untuk kicker & teks berkas ===== */
+.cover-names,.sec-title,.person h3,.penutup-names,.event h3,.sub-h,.tl-year,.acc-card .bank,.leader-core span,.cd-box b,.gal-count,.serif{font-family:'Noir Display',serif}
+.cover-names{letter-spacing:.02em}
+.cover-kicker{font-family:'Noir Kicker',monospace;font-weight:700}
+p,li,.cover-date,.cover-guest,#btnOpen,.sec-kicker,.person p,.ig-btn,.cd-box span,.event p,.btn,.dc-chip,.info-card p,.tl-card p,.live-badge,.salin-btn,.field label,.field input,.field select,.field textarea,.demo-note,.gb-item b,.gb-item .st,.gb-item p,.acc-num,.acc-name,.copy-btn,.foot-note,.safelight,.leader-core small,.gal-cap::before,.tl-year::before{font-family:'Noir Kicker',monospace}
+#galeri .gal-cap::before{font-family:'Noir Kicker',monospace}
+
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
   .rv{opacity:1;transform:none;letter-spacing:inherit}
@@ -307,19 +318,24 @@ body.opened #btnMusic{display:flex}
     <div class="scene" id="scene">
       <img class="lyr lyr-coverbg" src="assets/undangya/monokrom-noir/cover-bg.webp" alt="Fotografi hitam-putih satu kesatuan: jalanan kota klasik berbatu dengan lampu jalan vintage dan bangunan batu megah dalam kabut senja" width="640" height="1180">
       <!-- gantung: pivot atas -->
-      <img class="lyr" data-anchor="top" style="--sa:2.1deg;--sd:9.4s;left:-2%;top:-2%;width:21%;z-index:3" src="assets/undangya/monokrom-noir/flower-2.webp" alt="">
-      <img class="lyr" data-anchor="top" style="--sa:1.8deg;--sd:8.6s;--sdl:-3s;right:-2%;top:-2%;width:20%;z-index:3" src="assets/undangya/monokrom-noir/flower-4.webp" alt="">
-      <img class="lyr" data-anchor="top" style="--sa:2.4deg;--sd:10.2s;--sdl:-5s;left:16%;top:-3%;width:13%;z-index:2;opacity:.85" src="assets/undangya/monokrom-noir/leaf-1.webp" alt="">
-      <img class="lyr" data-anchor="top" style="--sa:2.4deg;--sd:9.8s;--sdl:-2s;right:16%;top:-3%;width:13%;z-index:2;opacity:.85" src="assets/undangya/monokrom-noir/flower-5.webp" alt="">
+      <img class="lyr" data-anchor="top" style="--sa:2.1deg;--sd:3.4s;left:-2%;top:-2%;width:21%;z-index:3" src="assets/undangya/monokrom-noir/flower-2.webp" alt="">
+      <img class="lyr" data-anchor="top" style="--sa:1.8deg;--sd:4.1s;--sdl:-3s;right:-2%;top:-2%;width:20%;z-index:3" src="assets/undangya/monokrom-noir/flower-4.webp" alt="">
+      <img class="lyr" data-anchor="top" style="--sa:2.4deg;--sd:3.9s;--sdl:-5s;left:16%;top:-3%;width:13%;z-index:2;opacity:.85" src="assets/undangya/monokrom-noir/leaf-1.webp" alt="">
+      <img class="lyr" data-anchor="top" style="--sa:2.4deg;--sd:4.7s;--sdl:-2s;right:16%;top:-3%;width:13%;z-index:2;opacity:.85" src="assets/undangya/monokrom-noir/flower-5.webp" alt="">
       <!-- lampu jalan: statis, hanya denyut cahaya -->
       <img class="lyr lamp-glow" style="left:-4%;bottom:9%;width:19%;z-index:3" src="assets/undangya/monokrom-noir/lamp.webp" alt="">
       <img class="lyr lamp-glow" style="right:-4%;bottom:9%;width:19%;z-index:3;animation-delay:-2.6s" src="assets/undangya/monokrom-noir/lamp.webp" alt="">
       <!-- tegak: pivot pangkal bawah -->
-      <img class="lyr" data-anchor="bottom" style="--sa:2.5deg;--sd:8.2s;left:-4%;bottom:-1%;width:30%;z-index:5" src="assets/undangya/monokrom-noir/flower-1.webp" alt="">
-      <img class="lyr" data-anchor="bottom" style="--sa:2.2deg;--sd:9s;--sdl:-4s;left:19%;bottom:-1.5%;width:22%;z-index:5" src="assets/undangya/monokrom-noir/flower-3.webp" alt="">
-      <img class="lyr" data-anchor="bottom" style="--sa:2.8deg;--sd:7.8s;--sdl:-1.5s;right:19%;bottom:-1.5%;width:21%;z-index:5" src="assets/undangya/monokrom-noir/flower-6.webp" alt="">
-      <img class="lyr" data-anchor="bottom" style="--sa:2.4deg;--sd:8.8s;--sdl:-6s;right:-4%;bottom:-1%;width:29%;z-index:5" src="assets/undangya/monokrom-noir/flower-2.webp" alt="">
-      <img class="lyr" data-anchor="bottom" style="--sa:1.9deg;--sd:9.6s;--sdl:-3.4s;left:41%;bottom:-2%;width:17%;z-index:4;opacity:.9" src="assets/undangya/monokrom-noir/flower-5.webp" alt="">
+      <img class="lyr" data-anchor="bottom" style="--sa:2.5deg;--sd:3s;left:-4%;bottom:-1%;width:30%;z-index:5" src="assets/undangya/monokrom-noir/flower-1.webp" alt="">
+      <img class="lyr" data-anchor="bottom" style="--sa:2.2deg;--sd:4.4s;--sdl:-4s;left:19%;bottom:-1.5%;width:22%;z-index:5" src="assets/undangya/monokrom-noir/flower-3.webp" alt="">
+      <img class="lyr" data-anchor="bottom" style="--sa:2.8deg;--sd:3.6s;--sdl:-1.5s;right:19%;bottom:-1.5%;width:21%;z-index:5" src="assets/undangya/monokrom-noir/flower-6.webp" alt="">
+      <img class="lyr" data-anchor="bottom" style="--sa:2.4deg;--sd:5s;--sdl:-6s;right:-4%;bottom:-1%;width:29%;z-index:5" src="assets/undangya/monokrom-noir/flower-2.webp" alt="">
+      <img class="lyr" data-anchor="bottom" style="--sa:1.9deg;--sd:3.2s;--sdl:-3.4s;left:41%;bottom:-2%;width:17%;z-index:4;opacity:.9" src="assets/undangya/monokrom-noir/flower-5.webp" alt="">
+      <!-- rumpun pampas tegak pengisi pita bawah + gantung tambahan (Program Detail: sampul ≥20 instans) -->
+      <img class="lyr" data-anchor="bottom" style="--sa:1.7deg;--sd:4.6s;--sdl:-2.2s;left:28%;bottom:-2.5%;width:15%;z-index:4;opacity:.92" src="assets/undangya/monokrom-noir/pampas-1.webp" alt="">
+      <img class="lyr" data-anchor="bottom" style="--sa:2deg;--sd:5.2s;--sdl:-.8s;right:28%;bottom:-2.5%;width:14%;z-index:4;opacity:.92" src="assets/undangya/monokrom-noir/pampas-1.webp" alt="">
+      <img class="lyr" data-anchor="bottom" style="--sa:2.3deg;--sd:3.45s;--sdl:-5.2s;left:56%;bottom:-2%;width:16%;z-index:4;opacity:.9" src="assets/undangya/monokrom-noir/flower-6.webp" alt="">
+      <img class="lyr" data-anchor="top" style="--sa:2.2deg;--sd:4.85s;--sdl:-1.2s;right:37%;top:-3%;width:11%;z-index:2;opacity:.8" src="assets/undangya/monokrom-noir/leaf-1.webp" alt="">
       <!-- melayang: debu cahaya + kelopak, elemen CSS murni -->
       <span class="dust" style="left:12%;top:64%;width:9px;height:9px;--dd:12s"></span>
       <span class="dust" style="left:26%;top:78%;width:6px;height:6px;--dd:15s;--ddl:-6s"></span>
@@ -332,6 +348,9 @@ body.opened #btnMusic{display:flex}
       <img class="petal" style="--pt:16%;--pd:21s;--y50:30px;--ye:60px;width:17px" src="assets/undangya/monokrom-noir/petal.webp" alt="">
       <img class="petal" style="--pt:30%;--pd:25s;--pdl:-9s;--y50:20px;--ye:44px;width:13px" src="assets/undangya/monokrom-noir/petal.webp" alt="">
       <img class="petal" style="--pt:9%;--pd:23s;--pdl:-15s;--y50:38px;--ye:70px;width:15px" src="assets/undangya/monokrom-noir/petal.webp" alt="">
+      <img class="petal" style="--pt:22%;--pd:27s;--pdl:-4s;--y50:24px;--ye:50px;width:12px" src="assets/undangya/monokrom-noir/petal.webp" alt="">
+      <img class="petal" style="--pt:38%;--pd:20s;--pdl:-11s;--y50:32px;--ye:58px;width:16px" src="assets/undangya/monokrom-noir/petal.webp" alt="">
+      <img class="petal" style="--pt:48%;--pd:24s;--pdl:-18s;--y50:18px;--ye:42px;width:11px" src="assets/undangya/monokrom-noir/petal.webp" alt="">
       <div class="cover-shade"></div>
       <div class="venetian" aria-hidden="true"></div>
       <span class="dust" style="left:18%;top:58%;width:7px;height:7px;--dd:13.5s;--ddl:-4s"></span>
@@ -363,10 +382,10 @@ body.opened #btnMusic{display:flex}
     <!-- ================= PEMBUKA ================= -->
     <section id="sambutan" class="zone-light">
       <img class="bgimg" src="assets/undangya/monokrom-noir/bg-city.webp" alt="" loading="lazy" decoding="async">
-      <img class="decor" data-anchor="bottom" style="--sa:2deg;--sd:9s;left:-3%;bottom:0;width:24%" src="assets/undangya/monokrom-noir/flower-5.webp" alt="">
+      <img class="decor" data-anchor="bottom" style="--sa:2deg;--sd:4.9s;left:-3%;bottom:0;width:24%" src="assets/undangya/monokrom-noir/flower-5.webp" alt="">
       <img class="decor" style="left:6px;top:10px;width:44px;opacity:.75" src="assets/undangya/monokrom-noir/corner-silver.webp" alt="">
       <img class="decor" style="right:6px;bottom:10px;width:44px;opacity:.75;transform:rotate(180deg)" src="assets/undangya/monokrom-noir/corner-silver.webp" alt="">
-      <img class="decor" data-anchor="bottom" style="--sa:2.3deg;--sd:8.4s;--sdl:-4s;right:-3%;bottom:0;width:22%" src="assets/undangya/monokrom-noir/flower-1.webp" alt="">
+      <img class="decor" data-anchor="bottom" style="--sa:2.3deg;--sd:3.3s;--sdl:-4s;right:-3%;bottom:0;width:22%" src="assets/undangya/monokrom-noir/flower-1.webp" alt="">
       <div class="inner">
         <div class="sec-head">
           <div class="sec-icon rv rv-zoom"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 12c4-2.4 8-2.4 12 0v24c-4-2.4-8-2.4-12 0z"/><path d="M38 12c-4-2.4-8-2.4-12 0v24c4-2.4 8-2.4 12 0z"/><path d="M24 12v24"/></svg></div>
@@ -376,7 +395,7 @@ body.opened #btnMusic{display:flex}
         </div>
         <div class="card rv rv-zoom" style="text-align:center">
           <p style="font-size:20px;line-height:1.75;font-style:italic">“Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”</p>
-          <p class="rv rv-track" style="--rd:.15s;margin-top:12px;font-family:'Inter',system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;font-weight:700">QS. AR-RUM : 21</p>
+          <p class="rv rv-track" style="--rd:.15s;margin-top:12px;font-family:'Noir Kicker',monospace;font-size:11.5px;letter-spacing:.24em;font-weight:700">QS. AR-RUM : 21</p>
           <p style="margin-top:16px;font-size:14px;line-height:1.75;color:#3d3d3d">Seperti selembar foto hitam-putih yang tak lekang oleh waktu, dua hati yang dipertemukan kini hendak mengabadikan bab terindahnya. Dengan penuh syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberi doa restu pada hari bahagia kami.</p>
         </div>
       </div>
@@ -384,8 +403,9 @@ body.opened #btnMusic{display:flex}
 
     <!-- ================= MEMPELAI ================= -->
     <section id="mempelai" class="zone-light">
-      <img class="decor" data-anchor="bottom" style="--sa:1.8deg;--sd:9.6s;left:-4%;top:34%;width:20%;opacity:.55" src="assets/undangya/monokrom-noir/leaf-1.webp" alt="">
-      <img class="decor" data-anchor="bottom" style="--sa:2deg;--sd:8.8s;--sdl:-5s;right:-4%;top:58%;width:20%;opacity:.55" src="assets/undangya/monokrom-noir/leaf-1.webp" alt="">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/galeri-2.webp" alt="" loading="lazy" decoding="async">
+      <img class="decor" data-anchor="bottom" style="--sa:1.8deg;--sd:4.2s;left:-4%;top:34%;width:20%;opacity:.55" src="assets/undangya/monokrom-noir/leaf-1.webp" alt="">
+      <img class="decor" data-anchor="bottom" style="--sa:2deg;--sd:5.3s;--sdl:-5s;right:-4%;top:58%;width:20%;opacity:.55" src="assets/undangya/monokrom-noir/leaf-1.webp" alt="">
       <div class="inner">
       <div class="sec-head">
         <div class="sec-icon rv rv-zoom"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="19" cy="29" r="10"/><circle cx="30" cy="19" r="10"/></svg></div>
@@ -418,7 +438,7 @@ body.opened #btnMusic{display:flex}
 
     <!-- ================= LOVE STORY ================= -->
     <section id="kisah" class="zone-light">
-      <img class="bgimg" src="assets/undangya/monokrom-noir/bg-city.webp" alt="" loading="lazy" decoding="async">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/galeri-7.webp" alt="" loading="lazy" decoding="async">
       <img class="petal" style="--pt:6%;--pd:24s;--y50:26px;--ye:52px;width:14px" src="assets/undangya/monokrom-noir/petal.webp" alt="">
       <img class="petal" style="--pt:44%;--pd:27s;--pdl:-12s;--y50:20px;--ye:40px;width:12px" src="assets/undangya/monokrom-noir/petal.webp" alt="">
       <div class="inner">
@@ -452,6 +472,7 @@ body.opened #btnMusic{display:flex}
 
     <!-- ================= COUNTDOWN + ACARA + DRESSCODE + DENAH ================= -->
     <section id="acara" class="zone-light">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/teaser-poster.webp" alt="" loading="lazy" decoding="async">
       <div class="inner">
         <div class="sec-head">
           <div class="sec-icon rv rv-zoom"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="24" cy="26" r="15"/><path d="M24 18v8l6 4M18 4h12M24 4v7"/></svg></div>
@@ -501,7 +522,7 @@ body.opened #btnMusic{display:flex}
             <span class="dc-chip rv rv-up" style="--rd:.28s"><span class="dc-dot" style="background:#d9d9d9"></span>Abu Muda</span>
             <span class="dc-chip rv rv-up" style="--rd:.35s"><span class="dc-dot" style="background:#f4f4f4"></span>Putih Gading</span>
           </div>
-          <p style="font-size:12.5px;line-height:1.65;margin-top:13px;font-family:'Inter',system-ui,sans-serif">Panduan contoh: busana formal atau semi-formal dalam nuansa hitam, abu, dan putih akan menyatu indah dengan tema monokrom acara. Terima kasih atas pengertiannya.</p>
+          <p style="font-size:12.5px;line-height:1.65;margin-top:13px;font-family:'Noir Kicker',monospace">Panduan contoh: busana formal atau semi-formal dalam nuansa hitam, abu, dan putih akan menyatu indah dengan tema monokrom acara. Terima kasih atas pengertiannya.</p>
         </div>
 
         <h3 class="sub-h rv rv-up">Denah &amp; Info Lokasi</h3>
@@ -524,8 +545,8 @@ body.opened #btnMusic{display:flex}
     <!-- ================= GALERI REL GESER ================= -->
     <section id="galeri" class="zone-dark">
       <img class="bgimg" src="assets/undangya/monokrom-noir/bg-interior.webp" alt="" loading="lazy" decoding="async">
-      <img class="decor" data-anchor="top" style="--sa:2deg;--sd:9.2s;left:0;top:-2%;width:19%;z-index:2" src="assets/undangya/monokrom-noir/flower-2.webp" alt="">
-      <img class="decor" data-anchor="top" style="--sa:2.2deg;--sd:8.6s;--sdl:-4s;right:0;top:-2%;width:19%;z-index:2" src="assets/undangya/monokrom-noir/flower-4.webp" alt="">
+      <img class="decor" data-anchor="top" style="--sa:2deg;--sd:3.7s;left:0;top:-2%;width:19%;z-index:2" src="assets/undangya/monokrom-noir/flower-2.webp" alt="">
+      <img class="decor" data-anchor="top" style="--sa:2.2deg;--sd:4.5s;--sdl:-4s;right:0;top:-2%;width:19%;z-index:2" src="assets/undangya/monokrom-noir/flower-4.webp" alt="">
       <div class="inner">
       <div class="sec-head">
         <div class="sec-icon rv rv-zoom"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="6" y="14" width="36" height="26" rx="2"/><circle cx="24" cy="27" r="7"/><path d="M17 14l3-5h8l3 5M38 20h.01"/></svg></div>
@@ -554,6 +575,7 @@ body.opened #btnMusic{display:flex}
 
     <!-- ================= VIDEO TEASER ================= -->
     <section id="cuplikan" class="zone-dark">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/galeri-5.webp" alt="" loading="lazy" decoding="async">
       <img class="petal" style="--pt:10%;--pd:26s;--y50:24px;--ye:48px;width:13px" src="assets/undangya/monokrom-noir/petal.webp" alt="">
       <div class="inner">
         <div class="sec-head">
@@ -578,8 +600,8 @@ body.opened #btnMusic{display:flex}
 
     <!-- ================= LIVE STREAMING + HASHTAG + GALERI TAMU ================= -->
     <section id="live" class="zone-dark">
-      <img class="bgimg" src="assets/undangya/monokrom-noir/bg-interior.webp" alt="" loading="lazy" decoding="async">
-      <img class="decor" data-anchor="top" style="--sa:1.9deg;--sd:9.8s;right:2%;top:-2%;width:17%;z-index:2" src="assets/undangya/monokrom-noir/flower-4.webp" alt="">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/galeri-1.webp" alt="" loading="lazy" decoding="async">
+      <img class="decor" data-anchor="top" style="--sa:1.9deg;--sd:3.1s;right:2%;top:-2%;width:17%;z-index:2" src="assets/undangya/monokrom-noir/flower-4.webp" alt="">
       <div class="inner">
         <div class="sec-head">
           <div class="sec-icon rv rv-zoom"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="24" cy="24" r="3.4"/><path d="M17.5 17.5a9.4 9.4 0 000 13M30.5 17.5a9.4 9.4 0 010 13M12.6 12.6a16.4 16.4 0 000 22.8M35.4 12.6a16.4 16.4 0 010 22.8"/></svg></div>
@@ -613,7 +635,8 @@ body.opened #btnMusic{display:flex}
 
     <!-- ================= RSVP + DINDING UCAPAN ================= -->
     <section id="rsvp" class="zone-light">
-      <img class="decor" data-anchor="bottom" style="--sa:2.1deg;--sd:9.2s;right:-3%;bottom:0;width:23%" src="assets/undangya/monokrom-noir/flower-1.webp" alt="">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/galeri-3.webp" alt="" loading="lazy" decoding="async">
+      <img class="decor" data-anchor="bottom" style="--sa:2.1deg;--sd:5.1s;right:-3%;bottom:0;width:23%" src="assets/undangya/monokrom-noir/flower-1.webp" alt="">
       <div class="inner">
         <div class="sec-head">
           <div class="sec-icon rv rv-zoom"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M10 6h28v30H10z"/><path d="M17 15h14M17 21h14M17 27h8"/></svg></div>
@@ -637,9 +660,9 @@ body.opened #btnMusic{display:flex}
 
     <!-- ================= BUKU TAMU & QR CHECK-IN ================= -->
     <section id="bukutamu" class="zone-light">
-      <img class="bgimg" src="assets/undangya/monokrom-noir/bg-city.webp" alt="" loading="lazy" decoding="async">
-      <img class="decor" data-anchor="bottom" style="--sa:1.7deg;--sd:10s;left:-3%;bottom:0;width:20%" src="assets/undangya/monokrom-noir/pampas-1.webp" alt="">
-      <img class="decor" data-anchor="bottom" style="--sa:1.9deg;--sd:9.4s;--sdl:-5s;right:-3%;bottom:0;width:20%" src="assets/undangya/monokrom-noir/pampas-1.webp" alt="">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/galeri-6.webp" alt="" loading="lazy" decoding="async">
+      <img class="decor" data-anchor="bottom" style="--sa:1.7deg;--sd:4s;left:-3%;bottom:0;width:20%" src="assets/undangya/monokrom-noir/pampas-1.webp" alt="">
+      <img class="decor" data-anchor="bottom" style="--sa:1.9deg;--sd:3.5s;--sdl:-5s;right:-3%;bottom:0;width:20%" src="assets/undangya/monokrom-noir/pampas-1.webp" alt="">
       <div class="inner">
         <div class="sec-head">
           <div class="sec-icon rv rv-zoom"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 8h13v13H8zM27 8h13v13H27zM8 27h13v13H8zM27 27h6v6h-6zM40 27v.01M27 40v.01M34 40h6"/></svg></div>
@@ -649,7 +672,7 @@ body.opened #btnMusic{display:flex}
         </div>
         <div class="card rv rv-zoom" style="text-align:center">
           <div class="qr-box"><img src="assets/undangya/monokrom-noir/qr-undangan.webp" alt="Kode QR menuju halaman undangan ini" loading="lazy" decoding="async"></div>
-          <p style="font-size:13.5px;line-height:1.65;font-family:'Inter',system-ui,sans-serif">Kode QR membuka halaman undangan yang sedang Anda baca — tunjukkan kepada penerima tamu saat check-in.</p>
+          <p style="font-size:13.5px;line-height:1.65;font-family:'Noir Kicker',monospace">Kode QR membuka halaman undangan yang sedang Anda baca — tunjukkan kepada penerima tamu saat check-in.</p>
           <form id="ciForm" novalidate style="text-align:left;margin-top:18px">
             <div class="field"><label for="ciName">Nama Tamu</label><input id="ciName" type="text" placeholder="Nama Anda" autocomplete="name"></div>
             <div class="field"><label for="ciSesi">Sesi Kehadiran</label>
@@ -664,7 +687,8 @@ body.opened #btnMusic{display:flex}
 
     <!-- ================= AMPLOP + KADO FISIK ================= -->
     <section id="amplop" class="zone-light">
-      <img class="decor" data-anchor="bottom" style="--sa:2deg;--sd:9s;left:-3%;bottom:0;width:22%" src="assets/undangya/monokrom-noir/flower-3.webp" alt="">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/galeri-8.webp" alt="" loading="lazy" decoding="async">
+      <img class="decor" data-anchor="bottom" style="--sa:2deg;--sd:4.8s;left:-3%;bottom:0;width:22%" src="assets/undangya/monokrom-noir/flower-3.webp" alt="">
       <img class="decor" style="right:8px;top:12px;width:40px;opacity:.7;transform:scaleX(-1)" src="assets/undangya/monokrom-noir/corner-silver.webp" alt="">
       <div class="inner">
       <div class="sec-head">
@@ -689,7 +713,7 @@ body.opened #btnMusic{display:flex}
       <div class="card acc-card rv rv-zoom" style="margin-top:20px">
         <div class="sec-icon rv rv-zoom" style="width:40px;height:40px"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M8 20h32v20H8zM4 12h40v8H4zM24 12v28M24 12c-6 0-9-2.4-9-5.4C15 4 17.4 3 19.2 3.8 22 5 24 12 24 12zM24 12c6 0 9-2.4 9-5.4C33 4 30.6 3 28.8 3.8 26 5 24 12 24 12z"/></svg></div>
         <div class="bank" style="font-size:16.5px;letter-spacing:.1em">KIRIM KADO FISIK</div>
-        <p style="font-size:13.5px;line-height:1.75;margin-top:8px;font-family:'Inter',system-ui,sans-serif">Kediaman Mempelai Wanita<br>Jl. Melati Indah No. 12, Kebayoran Baru,<br>Jakarta Selatan 12120 <span style="opacity:.65">(alamat contoh)</span></p>
+        <p style="font-size:13.5px;line-height:1.75;margin-top:8px;font-family:'Noir Kicker',monospace">Kediaman Mempelai Wanita<br>Jl. Melati Indah No. 12, Kebayoran Baru,<br>Jakarta Selatan 12120 <span style="opacity:.65">(alamat contoh)</span></p>
         <button class="salin-btn" type="button" data-copytext="Kediaman Mempelai Wanita — Jl. Melati Indah No. 12, Kebayoran Baru, Jakarta Selatan 12120 (alamat contoh)">SALIN ALAMAT</button>
       </div>
       </div>
@@ -697,7 +721,8 @@ body.opened #btnMusic{display:flex}
 
     <!-- ================= TURUT MENGUNDANG ================= -->
     <section id="turut" class="zone-light">
-      <img class="decor" data-anchor="bottom" style="--sa:1.8deg;--sd:9.8s;right:-3%;bottom:0;width:21%" src="assets/undangya/monokrom-noir/flower-5.webp" alt="">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/cover-bg.webp" alt="" loading="lazy" decoding="async">
+      <img class="decor" data-anchor="bottom" style="--sa:1.8deg;--sd:3.8s;right:-3%;bottom:0;width:21%" src="assets/undangya/monokrom-noir/flower-5.webp" alt="">
       <div class="inner">
         <div class="sec-head">
           <div class="sec-icon rv rv-zoom"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="17" cy="17" r="6"/><circle cx="32" cy="17" r="6"/><path d="M6 40c1-7 5.4-10.5 11-10.5S27 33 28 40M21 40c1-7 5.4-10.5 11-10.5 5.6 0 10 3.5 11 10.5"/></svg></div>
@@ -721,16 +746,16 @@ body.opened #btnMusic{display:flex}
 
     <!-- ================= PENUTUP ================= -->
     <section id="penutup" class="zone-dark" style="text-align:center">
-      <img class="bgimg" src="assets/undangya/monokrom-noir/bg-city.webp" alt="" loading="lazy" decoding="async">
-      <img class="decor" data-anchor="top" style="--sa:2deg;--sd:9.4s;left:1%;top:-2%;width:19%;z-index:2" src="assets/undangya/monokrom-noir/flower-2.webp" alt="">
-      <img class="decor" data-anchor="top" style="--sa:2.1deg;--sd:8.8s;--sdl:-3s;right:1%;top:-2%;width:19%;z-index:2" src="assets/undangya/monokrom-noir/flower-4.webp" alt="">
+      <img class="bgimg" src="assets/undangya/monokrom-noir/hero.webp" alt="" loading="lazy" decoding="async">
+      <img class="decor" data-anchor="top" style="--sa:2deg;--sd:4.3s;left:1%;top:-2%;width:19%;z-index:2" src="assets/undangya/monokrom-noir/flower-2.webp" alt="">
+      <img class="decor" data-anchor="top" style="--sa:2.1deg;--sd:5.4s;--sdl:-3s;right:1%;top:-2%;width:19%;z-index:2" src="assets/undangya/monokrom-noir/flower-4.webp" alt="">
       <img class="decor lamp-glow" style="left:-3%;bottom:4%;width:17%;z-index:2" src="assets/undangya/monokrom-noir/lamp.webp" alt="">
       <img class="decor lamp-glow" style="right:-3%;bottom:4%;width:17%;z-index:2;animation-delay:-2.8s" src="assets/undangya/monokrom-noir/lamp.webp" alt="">
       <div class="inner">
         <div class="card rv rv-zoom" style="padding:32px 22px 28px">
           <div class="serif rv rv-track" style="font-weight:900;font-size:21px;letter-spacing:.14em">M &nbsp;·&nbsp; F</div>
-          <p class="rv rv-up" style="--rd:.1s;font-size:15.5px;line-height:1.8;max-width:320px;margin:14px auto 0;font-family:'Inter',system-ui,sans-serif">Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua mempelai.</p>
-          <p class="rv rv-track" style="--rd:.18s;margin-top:18px;font-family:'Inter',system-ui,sans-serif;font-size:11.5px;letter-spacing:.3em;font-weight:700">KAMI YANG BERBAHAGIA</p>
+          <p class="rv rv-up" style="--rd:.1s;font-size:15.5px;line-height:1.8;max-width:320px;margin:14px auto 0;font-family:'Noir Kicker',monospace">Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua mempelai.</p>
+          <p class="rv rv-track" style="--rd:.18s;margin-top:18px;font-family:'Noir Kicker',monospace;font-size:11.5px;letter-spacing:.3em;font-weight:700">KAMI YANG BERBAHAGIA</p>
           <div class="penutup-names rv rv-zoom" style="--rd:.24s;margin-top:8px">Meyzsa &amp; Fahrezzi</div>
           <p class="rv rv-up" style="--rd:.3s;margin-top:12px;font-style:italic;font-size:18px;color:#cfcfcf">…dalam hitam dan putih, kisah kami berwarna selamanya.</p>
         </div>
